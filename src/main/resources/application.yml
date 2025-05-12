@@ -13,9 +13,15 @@ spring:
   sql:
     init:
       schema-locations: classpath:schema.sql
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 logging:
   level:
     root: INFO # Set default logging level
     org.hibernate.SQL: DEBUG # Log SQL queries
     org.hibernate.type.descriptor.sql: TRACE # Log query parameter values
+
+
