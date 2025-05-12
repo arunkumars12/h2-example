@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none # Automatically update the database schema
+  h2:
+    console:
+      enabled: true # Enable the H2 web console
+  sql:
+    init:
+      schema-locations: classpath:schema.sql
+
+logging:
+  level:
+    root: INFO # Set default logging level
+    org.hibernate.SQL: DEBUG # Log SQL queries
+    org.hibernate.type.descriptor.sql: TRACE # Log query parameter values
