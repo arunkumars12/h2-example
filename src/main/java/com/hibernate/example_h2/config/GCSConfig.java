@@ -16,13 +16,13 @@ public class GCSConfig {
     @Bean
     public Storage storage() throws IOException {
 //        GOOGLE_APPLICATION_CREDENTIALS=/Users/arun/Downloads/example-h2/src/main/resources/gcpauth.json
-        ClassPathResource resource = new ClassPathResource("gcpauth.json");
-        try (InputStream inputStream = resource.getInputStream()) {
-            return StorageOptions.newBuilder()
-                    .setCredentials(ServiceAccountCredentials.fromStream(inputStream))
-                    .build()
-                    .getService();
-        }
-//        return StorageOptions.getDefaultInstance().getService();
+//        ClassPathResource resource = new ClassPathResource("gcpauth.json");
+//        try (InputStream inputStream = resource.getInputStream()) {
+//            return StorageOptions.newBuilder()
+//                    .setCredentials(ServiceAccountCredentials.fromStream(inputStream))
+//                    .build()
+//                    .getService();
+//        }
+        return StorageOptions.getDefaultInstance().getService();
     }
 }
